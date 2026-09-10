@@ -35,8 +35,8 @@ const ProjectData=[
         technologies:[
             <FaReact />, <FaCss3Alt />, <SiJavascript />
         ],
-        github:"https://abilashg04.github.io/portfolio/",
-        live:"#"
+        github:"#",
+        live:"https://abilashg04.github.io/portfolio/"
     }
 ]
 export default ProjectData;
