@@ -1,0 +1,425 @@
+.contact {
+  min-height: 100vh;
+  padding: 110px 8%;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(40, 80, 255, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(150, 40, 255, 0.14),
+      transparent 30%
+    ),
+    #060912;
+
+  color: white;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= HEADING ================= */
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-heading > p:first-child {
+  color: #718cff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin: 0 0 12px;
+}
+
+.contact-heading h2 {
+  margin: 0;
+
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.contact-heading h2 span {
+  background: linear-gradient(
+    90deg,
+    #287cff,
+    #a63cff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-line {
+  width: 80px;
+  height: 3px;
+
+  margin: 20px auto;
+
+  background: linear-gradient(
+    90deg,
+    #287cff,
+    #a63cff
+  );
+
+  border-radius: 10px;
+}
+
+.contact-description {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #aeb6ca;
+
+  font-size: 16px;
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+/* ================= CONTACT CONTENT ================= */
+
+.contact-content {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 45px;
+
+  align-items: start;
+}
+
+/* ================= LEFT INFO ================= */
+
+.contact-info {
+  padding: 30px;
+
+  border: 1px solid rgba(120, 135, 255, 0.18);
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(14px);
+}
+
+.contact-info h3 {
+  margin: 0 0 15px;
+
+  font-size: 28px;
+}
+
+.contact-info > p {
+  margin: 0 0 30px;
+
+  color: #aeb6ca;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* ================= CONTACT ITEM ================= */
+
+.contact-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: #55b8ff;
+
+  background: rgba(50, 100, 255, 0.1);
+
+  border: 1px solid rgba(80, 130, 255, 0.3);
+
+  font-size: 21px;
+
+  transition: 0.3s;
+}
+
+.contact-item:hover .contact-icon {
+  transform: translateY(-4px);
+
+  border-color: #617cff;
+
+  box-shadow: 0 8px 25px rgba(50, 90, 255, 0.2);
+}
+
+.contact-item h4 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+}
+
+.contact-item p {
+  margin: 0;
+
+  color: #8f9ab5;
+
+  font-size: 14px;
+}
+
+/* ================= SOCIAL ================= */
+
+.contact-social {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(120, 140, 255, 0.15);
+}
+
+.contact-social a {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(100, 120, 255, 0.25);
+
+  font-size: 19px;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.contact-social a:hover {
+  color: #72aaff;
+
+  transform: translateY(-4px);
+
+  border-color: #647cff;
+
+  box-shadow: 0 8px 25px rgba(50, 80, 255, 0.2);
+}
+
+/* ================= FORM BOX ================= */
+
+.contact-form-box {
+  padding: 30px;
+
+  border: 1px solid rgba(120, 135, 255, 0.18);
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(14px);
+}
+
+/* ================= INPUT ROW ================= */
+
+.input-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+/* ================= INPUT GROUP ================= */
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #dce2f2;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  border: 1px solid rgba(120, 140, 255, 0.2);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.input-group input {
+  height: 50px;
+}
+
+.input-group textarea {
+  min-height: 140px;
+
+  resize: vertical;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #66718e;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #587cff;
+
+  background: rgba(30, 50, 120, 0.12);
+
+  box-shadow:
+    0 0 0 3px rgba(70, 100, 255, 0.08);
+}
+
+/* ================= SEND BUTTON ================= */
+
+.send-btn {
+  width: 100%;
+
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    90deg,
+    #168cff,
+    #a52cff
+  );
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.send-btn svg {
+  font-size: 18px;
+
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(70, 70, 255, 0.3);
+}
+
+.send-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+  .contact {
+    padding: 90px 5%;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .contact {
+    padding: 80px 20px;
+  }
+
+  .contact-heading h2 {
+    font-size: 34px;
+  }
+
+  .contact-description {
+    font-size: 15px;
+  }
+
+  .contact-info,
+  .contact-form-box {
+    padding: 22px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .contact-info h3 {
+    font-size: 25px;
+  }
+
+}
