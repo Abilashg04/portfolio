@@ -35,7 +35,7 @@ const ProjectData=[
         technologies:[
             <FaReact />, <FaCss3Alt />, <SiJavascript />
         ],
-        github:"#",
+        github:"https://abilashg04.github.io/portfolio/",
         live:"#"
     }
 ]
