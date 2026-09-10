@@ -13,7 +13,7 @@ const ProjectData=[
         technologies:[
             <FaHtml5 />, <FaCss3Alt />, <FaPython />, <SiFlask />, <SiMongodb />
         ],
-        github:"#",
+        github:"https://github.com/Abilashg04/credit-card-fraud-detection",
         live:"#"
     },
     {
