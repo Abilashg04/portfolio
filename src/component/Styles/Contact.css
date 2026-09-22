@@ -24,6 +24,14 @@
   margin: auto;
 }
 
+.form-status {
+  margin-top: 15px;
+  text-align: center;
+  color: #6fcf97;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 /* ================= HEADING ================= */
 
 .contact-heading {
