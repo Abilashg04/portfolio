@@ -1,49 +1,65 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "../Styles/Contact.css";
+
 import {
   FiMail,
   FiPhone,
   FiMapPin,
   FiSend,
   FiGithub,
+  FiInstagram,
   FiLinkedin,
-  FiInstagram
 } from "react-icons/fi";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [status, setStatus] = useState("");
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    alert("Thank you! Your message has been submitted.");
+    setStatus("Sending...");
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    const form = e.target;
+
+    const templateParams = {
+      name: form.name.value,
+      email: form.email.value,
+      title: form.title.value,
+      message: form.message.value,
+    };
+
+    try {
+      await emailjs.send(
+        "service_nemyam5",
+        "template_omlvyud",
+        templateParams,
+        {
+          publicKey: "-rcWIFLHbcrmvu6jO",
+        }
+      );
+
+      setStatus("Message sent successfully! ✅");
+
+      form.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+
+      setStatus(
+        `Failed to send message ❌ ${
+          error.text || error.message || "Please check EmailJS settings."
+        }`
+      );
+    }
   };
 
   return (
     <section className="contact" id="contact">
+
       <div className="contact-container">
 
-        {/* Heading */}
         <div className="contact-heading">
+
           <p>CONTACT ME</p>
 
           <h2>
@@ -56,6 +72,7 @@ function Contact() {
             Have a project idea or want to work together?
             Feel free to get in touch with me.
           </p>
+
         </div>
 
         <div className="contact-content">
@@ -69,7 +86,9 @@ function Contact() {
               creative ideas and opportunities.
             </p>
 
+            {/* Email */}
             <div className="contact-item">
+
               <div className="contact-icon">
                 <FiMail />
               </div>
@@ -78,9 +97,12 @@ function Contact() {
                 <h4>Email</h4>
                 <p>abilashg2004@gmail.com</p>
               </div>
+
             </div>
 
+            {/* Phone */}
             <div className="contact-item">
+
               <div className="contact-icon">
                 <FiPhone />
               </div>
@@ -89,24 +111,31 @@ function Contact() {
                 <h4>Phone</h4>
                 <p>+91 97518 40782</p>
               </div>
+
             </div>
 
+            {/* Location */}
             <div className="contact-item">
+
               <div className="contact-icon">
                 <FiMapPin />
               </div>
 
               <div>
                 <h4>Location</h4>
-                <p>Tamil Nadu, India</p>
+                <p>Kanya Kumari, Tamil Nadu</p>
               </div>
+
             </div>
 
+            {/* Social Links */}
             <div className="contact-social">
+
               <a
                 href="https://github.com/Abilashg04"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="GitHub"
               >
                 <FiGithub />
               </a>
@@ -115,6 +144,7 @@ function Contact() {
                 href="https://www.linkedin.com/in/abilash2004"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn"
               >
                 <FiLinkedin />
               </a>
@@ -124,81 +154,94 @@ function Contact() {
               >
                 <FiInstagram />
               </a>
+
             </div>
 
           </div>
 
+          {/* Contact Form */}
           <div className="contact-form-box">
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={sendEmail}>
 
               <div className="input-row">
 
                 <div className="input-group">
+
                   <label>Your Name</label>
 
                   <input
                     type="text"
                     name="name"
                     placeholder="Enter your name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                   />
+
                 </div>
 
                 <div className="input-group">
+
                   <label>Email Address</label>
 
                   <input
                     type="email"
                     name="email"
                     placeholder="Enter your email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                   />
+
                 </div>
 
               </div>
 
               <div className="input-group">
+
                 <label>Subject</label>
 
                 <input
                   type="text"
-                  name="subject"
+                  name="title"
                   placeholder="Enter subject"
-                  value={formData.subject}
-                  onChange={handleChange}
                   required
                 />
+
               </div>
 
               <div className="input-group">
+
                 <label>Message</label>
 
                 <textarea
                   name="message"
                   rows="6"
                   placeholder="Write your message..."
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                 ></textarea>
+
               </div>
 
-              <button type="submit" className="send-btn">
+              <button
+                type="submit"
+                className="send-btn"
+              >
                 Send Message
                 <FiSend />
               </button>
+
+              {status && (
+                <p className="form-status">
+                  {status}
+                </p>
+              )}
 
             </form>
 
           </div>
 
         </div>
+
       </div>
+
     </section>
   );
 }
